@@ -1,19 +1,36 @@
-<h2>Signup</h2>
+<div class="container">
+  <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
 
-<% if (message.length > 0) { %>
-  <div class="alert alert-danger"><%= message %></div>
-<% } %>
+    <div class="panel panel-success" >
+      <div class="panel-heading">
+          <div class="panel-title text-center">Registration</div>
+      </div>
 
-<form method="post" action="/signup">
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input class="form-control" type="text" name="email" id="email">
+      <div class="panel-body" >
+        <form name="form" id="form" class="form-horizontal" method="post" action="/signup">
+
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input id="email" type="email" class="form-control" name="email" value="" placeholder="email@domain.com">
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-12 controls">
+              <input class="btn btn-success pull-right" type="submit" value="Sign up">
+            </div>
+          </div>
+        </form>
+
+        <% if (message.length > 0) { %>
+          <div class="alert alert-danger"><%= message %></div>
+        <% } %>
+      </div>
+    </div>
+
   </div>
-
-  <div class="form-group">
-    <label for="email">Password</label>
-    <input class="form-control" type="password" name="password" id="password">
-  </div>
-
-  <input class="btn btn-default" type="submit">
-</form>
+</div>
