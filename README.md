@@ -1,23 +1,41 @@
-# WDI-Express
+# Project#3 for WDI9 at GA
 
-Sample Express/Mongo App for WDI with the service of [yeoman](https://github.com/yeoman/yo) and [generator-express](https://github.com/petecoop/generator-express)
+## Intro
+Helpz is a place where people who *love* what they do *helpz* you get things done at an unbeatable value. I was inspired by [fiverr.com](https://www.fiverr.com/) for this project, so this is a scalled down replica version and I wanted to focus on the ordering features of updating each order with status.
 
-### Configuration
+## Helpz
 
-`/config/config.js` (server) and (Express)
+### Setup
+For this project we used the below:
+  - node.js
+  - mongodb
+  - express
+  - own api
 
-### Adding Front-End dependencies
+Libraries used and saved under `package.json`
 
+```bash
+insert libraries here
 ```
-$ bower install jquery --save
-```
 
-Don't forget to include the library in your templates, referencing the bower package in `public/components/...`
+#### Helpz Basics
+Helpz models are `User` and `Post`.
 
-### Running the app
+These are the basic features:
 
-Starting the app is easy:
 
-```
-$ gulp
-```
+- Visitors
+  - View landing page
+  - View a Helpz post
+  - Be able to sign in
+  - Be able to log in/out
+- Logged in User
+  - Add a Helpz Post
+    - Text will have limitations per input
+  - Edit & update their own post
+  - Hire other Helpz
+    - Update status of order between
+      - Seller(user that created the post)
+      - Buyer(user that is willing to hire for a job)
+
+[Website](http://www.google.com)
