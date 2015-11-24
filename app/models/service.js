@@ -1,14 +1,14 @@
 var mongoose = require('mongoose');
 
-var service = new mongoose.Schema({
+var serviceSchema = new mongoose.Schema({
   title:        { type: String },
   description:  { type: String },
   duration:     { type: String },
-  createdBy:    { type: String },
+  createdBy:    { type: mongoose.Schema.Types.ObjectId, ref:'User' },
   createdOn:    { type: Date, default: Date.now }
 });
 
-var Service = mongoose.model('Service', service);
+var Service = mongoose.model('Service', serviceSchema);
 module.exports = Service;
 
 // var service1 = new Service({

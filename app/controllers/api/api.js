@@ -27,9 +27,9 @@ router.get('/secret', authenticatedUser, function (req, res, next) {
 router.get('/api/helpz', function (req, res){
   Service.find({}, function (err, services) {
     if (err) {
-      res.json({message: err});
+      res.json({message: 'Could not find any Services b/c: ' + err});
     } else {
-      res.send(services);
+      res.json(services);
     }
   });
 })
@@ -38,43 +38,65 @@ router.get('/api/helpz', function (req, res){
 router.get('/api/helpz/:id', function (req, res){
   Service.findById(req.params.id, function (err, service){
     if (err) {
-       res.json({message: err});
+      res.json({message: 'Could not find Service b/c:' + err});
     } else {
-      res.send(service);
+      res.send({service: service});
     }
   });
 })
 
 // CREATE
 router.post('/api/helpz', authenticatedUser, function (req, res){
+  // get user params to save in createdBy.
+  var serviceParams = req.body.service;
+  serviceParams.createdBy = req.user._id;
+
   Service.create(req.body.service, function (err, service){
     if (err) {
-      res.json({message: err});
+      res.status(422).json({message: 'Could not create Service b/c:' + err});
     } else {
-      res.json({message: "Service created"});
+      res.send(service);
     }
   });
 })
 
 //UPDATE
 router.put('/api/helpz/:id', authenticatedUser, function (req, res) {
-  Service.findByIdAndUpdate(req.params.id, req.body.service, function (err, service){
-    if (err){
-      res.json({message: err});
+  var currentUser = req.user.id;
+
+  Service.findById(req.params.id, function (err, service){
+
+    if(err) res.status(422).json({message: 'Could not find Services b/c:' + err});
+
+    if (currentUser !=  service.createdBy){
+      res.json({message: "You are not the Seller of this post"})
     } else {
-      res.json({message: "service updated!"});
+      if(req.body.title) service.title = req.body.title;
+      if(req.body.description) service.description = req.body.description;
+      if(req.body.duration) service.duration = req.body.duration;
+
+      service.save(function(){
+      if (err) res.json({messsage: 'Could not update Service b/c:' + error});
+        res.json({message: "service updated!"});
+      })
     }
   })
 });
 
 // DELETE
-router.get('/api/helpz/:id/delete', authenticatedUser, function (req, res) {
-  Service.findByIdAndRemove(req.params.id, function (err, service) {
-     console.log(req.params)
-     if (err) {
-        res.json({message: err})
-     } else {
-      res.json({message: 'Succesfully deleted'})
-     }
+router.delete('/api/helpz/:id', authenticatedUser,function (req, res, next) {
+
+  var currentUser = req.user.id;
+
+  Service.findById(req.params.id, function (err , service){
+    if (err) res.json({message: 'Could not delete Service b/c:' + err})
+    if (currentUser !=  service.createdBy) {
+      res.json({message: "You are not the creator!"});
+    } else {
+      service.remove(function(err){
+      if (err) res.json({message: err})
+      res.json({message: "Serivce has been removed"})
+      });
+    }
   })
-});
+})
