@@ -27,7 +27,7 @@ var config = {
       name: 'helpz'
     },
     port: 3000,
-    db: 'mongodb://localhost/helpz-production'
+    db: 'mongodb://heroku_585ksbg7:1f7ii1jvh02mt46ni1nrqnal3q@ds057204.mongolab.com:57204/heroku_585ksbg7'
   }
 };
 
