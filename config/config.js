@@ -26,8 +26,8 @@ var config = {
     app: {
       name: 'helpz'
     },
-    port: process.env.PORT || 3000,
-    db: process.env.MONGOLAB_URI ||'mongodb://localhost/helpz-production'
+    port: 3000,
+    db: 'mongodb://localhost/helpz-production'
   }
 };
 
