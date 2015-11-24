@@ -45,7 +45,7 @@ router.get('/api/helpz/:id', function (req, res){
   });
 })
 
-// CREATE req.body.service gives empty {}
+// CREATE
 router.post('/api/helpz', authenticatedUser, function (req, res){
   Service.create(req.body.service, function (err, service){
     if (err) {
@@ -56,7 +56,7 @@ router.post('/api/helpz', authenticatedUser, function (req, res){
   });
 })
 
-//UPDATE (not sure if it's working)
+//UPDATE
 router.put('/api/helpz/:id', authenticatedUser, function (req, res) {
   Service.findByIdAndUpdate(req.params.id, req.body.service, function (err, service){
     if (err){
