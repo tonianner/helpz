@@ -71,9 +71,9 @@ router.put('/api/helpz/:id', authenticatedUser, function (req, res) {
     if (currentUser !=  service.createdBy){
       res.json({message: "You are not the Seller of this post"})
     } else {
-      if(req.body.title) service.title = req.body.title;
-      if(req.body.description) service.description = req.body.description;
-      if(req.body.duration) service.duration = req.body.duration;
+      if(req.body.service.title) service.title = req.body.service.title;
+      if(req.body.service.description) service.description = req.body.service.description;
+      if(req.body.service.duration) service.duration = req.body.service.duration;
 
       service.save(function(){
       if (err) res.json({messsage: 'Could not update Service b/c:' + error});
