@@ -9,11 +9,11 @@ module.exports = function (app) {
 // INDEX
 router.get('/', function (req, res, next) {
   res.render('index', {
-    title: 'Generator-Express MVC'
+    // title: 'Generator-Express MVC'
   });
 });
 
-// Helpz
-router.get('/helpz', function (req, res, next) {
-  res.redirect('helpz/index');
+router.get('/services', function (req, res, next) {
+  res.render('services/sources.ejs', { message: req.flash('signupMessage') });
 });
+

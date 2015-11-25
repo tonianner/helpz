@@ -33,9 +33,5 @@ These are the basic features:
   - Add a Helpz Post
     - Text will have limitations per input
   - Edit & update their own post
-  - Hire other Helpz
-    - Update status of order between
-      - Seller(user that created the post)
-      - Buyer(user that is willing to hire for a job)
 
 [Website](http://www.google.com)
