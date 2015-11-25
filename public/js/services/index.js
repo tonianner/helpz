@@ -1,10 +1,3 @@
-// .then(success, error)
-// $(function(){
-//   API.getSecret().then(function(data){
-//     console.log("yeah! " + data)
-//   }, errorHandling)
-// });
-
 $(function(){
   API.getAllServices().then(function(services){
     services.forEach(function(service){
@@ -28,9 +21,7 @@ $(function(){
                 </li>\
                 <br>\
                 <li>\
-                  <a>\
-                    <i class="fa fa-trash"></i> Delete Entry\
-                  </a>\
+                <br>\
                 </li>\
                 <li>\
                   <a href="/services/'+service._id+'/edit">\
@@ -45,5 +36,3 @@ $(function(){
     }, errorHandling)
   })
 })
-
-

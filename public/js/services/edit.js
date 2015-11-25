@@ -19,7 +19,7 @@ $(function(){
     };
 
     API.editService(id, params).then(function (data) {
-      window.location.href = "/services";
+      window.location.href = "/services/" + data.service._id;
     }, errorHandling)
   })
 });

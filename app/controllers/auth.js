@@ -15,7 +15,7 @@ router.get('/signup', function (req, res, next) {
 // SIGN-UP: Create a new User
 router.post('/signup', function (req, res, next) {
   passport.authenticate('local-signup', {
-    successRedirect: '/',
+    successRedirect: '/services',
     failureRedirect: '/signup',
     failureFlash: true })(req, res, next);
 });
@@ -27,7 +27,7 @@ router.get('/signin', function (req, res, next) {
 // SIGN-IN: Authenticate the user
 router.post("/signin", function (req, res, next) {
   passport.authenticate('local-signin', {
-    successRedirect: '/',
+    successRedirect: '/services',
     failureRedirect: '/signin',
     failureFlash: true })(req, res, next);
 });

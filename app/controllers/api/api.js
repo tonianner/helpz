@@ -109,7 +109,7 @@ router.get('/api/helpz/:id', authenticatedUser,function (req, res, next) {
 
   Service.findById(paramsId, function (err , service){
     if (err) res.status(422).json({message: 'Could not delete Service b/c:' + err})
-
+    console.log(service)
     if (currentUser !=  service.createdBy) {
       res.status(403).json({message: "You are not the creator!"});
     } else {

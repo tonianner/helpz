@@ -1,5 +1,8 @@
 // common functions and variables here
 var errorHandling = function (error){
-  console.log(error)
-  alert('API ERROR: ' + error.responseJSON.message);
+  noty({
+    text: error.responseJSON.message,
+    timeout: 3000,
+    type: "error"
+  })
 };
