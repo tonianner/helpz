@@ -12,3 +12,8 @@ router.get('/', function (req, res, next) {
     title: 'Generator-Express MVC'
   });
 });
+
+// Helpz
+router.get('/helpz', function (req, res, next) {
+  res.redirect('helpz/index');
+});

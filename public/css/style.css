@@ -87,6 +87,15 @@ a {
   margin-bottom: 15px;
 }
 
+/* Register */
+.register-btn {
+  box-shadow: #E35803 -3px 3px 0;
+}
+
+.login-btn {
+  box-shadow: #00BCD4 -3px 3px 0;
+}
+
 
 /* FOOTER items */
 .footer {
