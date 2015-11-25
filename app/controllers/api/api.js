@@ -66,7 +66,7 @@ router.post('/api/helpz', authenticatedUser, function (req, res){
         message: 'Could not create Service b/c:' + err
       });
     } else {
-      res.status(200).json({success: true, service: service});
+      res.status(200).json({success: true, service:service});
     }
   });
 })
@@ -94,7 +94,7 @@ router.put('/api/helpz/:id', authenticatedUser, function (req, res) {
         if (err) {
           res.json({messsage: 'Could not update Service b/c:' + error});
         } else {
-          res.json({message: "Service updated!"});
+          res.json({message: "Service updated!", service:service});
         }
       })
     }
@@ -102,11 +102,12 @@ router.put('/api/helpz/:id', authenticatedUser, function (req, res) {
 });
 
 // DELETE
-router.delete('/api/helpz/:id', authenticatedUser,function (req, res, next) {
+router.get('/api/helpz/:id', authenticatedUser,function (req, res, next) {
 
   var currentUser = req.user.id;
+  var paramsId = req.params.id
 
-  Service.findById(req.params.id, function (err , service){
+  Service.findById(paramsId, function (err , service){
     if (err) res.status(422).json({message: 'Could not delete Service b/c:' + err})
 
     if (currentUser !=  service.createdBy) {

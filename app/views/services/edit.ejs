@@ -1,7 +1,7 @@
 <div class="container">
   <div class="thumbnail form-create-post">
-    <h3> Add your Helpz </h3>
-    <form id="createForm">
+    <h3>== EDIT ==</h3>
+    <form id="update-form">
       <!-- Input Title and Description -->
       <div class="form-group">
         <label for="helpzTopic-input">Helpz Topic</label>
@@ -12,7 +12,7 @@
             type       ="text"
             class      ="form-control"
             placeholder="send sweets and snacks from Japan"
-            id         ="createOneTitle">
+            id         ="editOneTitle">
         </div>
       </div>
       <!-- Drop down Select -->
@@ -24,18 +24,18 @@
           class      ="form-control counter"
           rows       ="5"
           placeholder="Describe what kind of help you are offering"
-          id         ="createOneDescription"></textarea>
+          id         ="editOneDescription"></textarea>
       </div>
       <div class="form-group">
         <label for="select-input">Delivery Time</label>
 
-        <button id="createService"type="submit" class="btn btn-success btn-lg pull-right">
-          Save & Continue
+        <button id="updateService" type="submit" class="btn btn-success btn-lg pull-right">
+          Save & Update
         </button>
         <p>
           Maximum
           <span>
-            <select name ="post[duration]" class="selectpicker btn-default" id="createOneDuration">
+            <select name ="post[duration]" class="selectpicker btn-default" id="editOneDuration">
               <option value="1 day">  1 day  </option>
               <option value="2 days"> 2 days </option>
               <option value="3 days"> 3 days </option>
@@ -50,4 +50,4 @@
   </div>
 </div>
 
-<script src="/js/services/new.js"></script>
+<script src="/js/services/edit.js"></script>

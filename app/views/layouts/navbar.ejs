@@ -20,9 +20,10 @@
     <div class="collapse navbar-collapse" id="navbar">
       <!-- Log in // Register -->
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="/services">Browse</a></li>
         <% if (user) { %>
           <li><a href="/services/new">Add a Service</a></li>
-          <li><a href="/signout">Logout</a></li<a>
+          <li><a href="/signout">Logout</a></li>
         <% } else { %>
           <li><a href="/signin">Login</a></li>
           <li><a href="/signup">Register</a></li>

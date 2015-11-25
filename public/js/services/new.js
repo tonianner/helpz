@@ -1,15 +1,12 @@
 $(function(){
-  $('#createService').on('click', function(e){
+  $('#createForm').on('submit', function(e){
     e.preventDefault();
-    // var title       = $('#createOneTitle').val();
-    // var description = $('#createOneDescription').val();
-    // var duration    = $('#createOneDuration').val();
 
     var params = {
       service: {
          title:       $('#createOneTitle').val(),
-         description: $('#createOneDescription').val()
-         // duration:    duration,
+         description: $('#createOneDescription').val(),
+         duration:    $('#createOneDuration').val()
       }
     };
 

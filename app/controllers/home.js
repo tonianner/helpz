@@ -19,6 +19,12 @@ router.get('/services/new', function (req, res, next) {
   res.render('services/new');
 });
 
+router.get('/services/:id/edit', function (req, res, next) {
+  var serviceId = req.params.id
+  res.render('services/edit');
+});
+
 router.get('/services/:id', function (req, res, next) {
   res.render('services/show');
 });
+

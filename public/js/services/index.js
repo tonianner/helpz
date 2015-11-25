@@ -33,7 +33,7 @@ $(function(){
                   </a>\
                 </li>\
                 <li>\
-                  <a href="">\
+                  <a href="/services/'+service._id+'/edit">\
                     <i class="fa fa-pencil"></i> Edit Post\
                   </a>\
                 </li>\
@@ -44,11 +44,6 @@ $(function(){
       ');
     }, errorHandling)
   })
-
-  // API.bindDelete().then(function(service){
-  //   $('deleteEntry').off().on('click', function(data){
-  //   }, errorHandling);
-  // });
 })
 
 
