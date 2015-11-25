@@ -7,6 +7,7 @@ a {
   color: #00B7FF;
 }
 
+/* Nav-bar content*/
 .icon {
   height: 47px;
   position: absolute;
@@ -17,6 +18,7 @@ a {
   font-family: 'Bowlby One', cursive;
 }
 
+/* Populating data Serive*/
 .populate-each {
   background-color: rgba(252,248,227,1);
 }
@@ -95,7 +97,6 @@ a {
 .register-btn {
   box-shadow: #E35803 -3px 3px 0;
 }
-
 .login-btn {
   box-shadow: #00BCD4 -3px 3px 0;
 }

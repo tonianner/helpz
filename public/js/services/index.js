@@ -13,18 +13,11 @@ $(function(){
           <div class="media">\
             <div class="media-body">\
               <h4 class="media-heading">\
-                <i class="fa fa-quote-left"></i> '+ service.title +'\
+                <a href="/services/'+ service._id +'">\
+                  <i class="fa fa-quote-left"></i> '+ service.title +'\
+                </a>\
               </h4>\
-              <ul class="list-inline pull-right">\
-                <li> <h4> hk$100 </h4></li>\
-                <li>\
-                  <button disabled="disabled" class="btn btn-info btn-lg">\
-                    Contact me \
-                    <i class="fa fa-facebook-square"></i>\
-                  </button>\
-                </li>\
-              </ul>\
-              <p> '+ service.description +'</p>\
+              <p>'+ service.description +'</p>\
               <ul class="list-inline list-unstyled">\
                 <li><span><i class="glyphicon glyphicon-calendar"></i> Created on: '+ service.createdOn +' </span></li>\
                 <li>|</li>\
@@ -35,7 +28,7 @@ $(function(){
                 </li>\
                 <br>\
                 <li>\
-                  <a href= "#">\
+                  <a>\
                     <i class="fa fa-trash"></i> Delete Entry\
                   </a>\
                 </li>\
@@ -49,6 +42,13 @@ $(function(){
           </div>\
         </div>\
       ');
-    })
+    }, errorHandling)
   })
+
+  // API.bindDelete().then(function(service){
+  //   $('deleteEntry').off().on('click', function(data){
+  //   }, errorHandling);
+  // });
 })
+
+

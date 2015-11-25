@@ -14,3 +14,11 @@ router.get('/', function (req, res, next) {
 router.get('/services', function (req, res, next) {
   res.render('services');
 });
+
+router.get('/services/new', function (req, res, next) {
+  res.render('services/new');
+});
+
+router.get('/services/:id', function (req, res, next) {
+  res.render('services/show');
+});

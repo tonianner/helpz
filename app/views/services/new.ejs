@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="thumbnail form-create-post">
+    <h3> Add your Helpz </h3>
+    <form method="post" action="/helpz" id="createOneForm">
+      <!-- Input Title and Description -->
+      <div class="form-group">
+        <label for="helpzTopic-input">Helpz Topic</label>
+        <div class="input-group">
+          <span class="input-group-addon">I will</span>
+          <input
+            name       ="post[title]"
+            type       ="text"
+            class      ="form-control"
+            placeholder="send sweets and snacks from Japan"
+            id         ="createOneTitle">
+        </div>
+      </div>
+      <!-- Drop down Select -->
+      <div class="form-group">
+        <label for="description-input">Description</label>
+        <textarea
+          name       ="post[description]"
+          type       ="text"
+          class      ="form-control counter"
+          rows       ="5"
+          placeholder="Describe what kind of help you are offering"
+          id         ="createOneDescription"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="select-input">Delivery Time</label>
+
+        <button id="createService"type="submit" class="btn btn-success btn-lg pull-right">
+          Save & Continue
+        </button>
+<!--         <p>
+          Maximum
+          <span>
+            <select name ="post[duration]" class="selectpicker btn-default" id="select-input createOneDuration">
+              <option value="1 day">  1 day  </option>
+              <option value="2 days"> 2 days </option>
+              <option value="3 days"> 3 days </option>
+              <option value="4 days"> 4 days </option>
+            </select>
+          </span>
+          to deliver
+        </p> -->
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<script src="/js/services/new.js"></script>

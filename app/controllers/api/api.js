@@ -66,7 +66,7 @@ router.post('/api/helpz', authenticatedUser, function (req, res){
         message: 'Could not create Service b/c:' + err
       });
     } else {
-      res.json({success: true});
+      res.status(200).json({success: true, service: service});
     }
   });
 })

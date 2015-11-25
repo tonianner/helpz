@@ -17,10 +17,11 @@
     </div> <!-- navbar-header -->
 
     <!-- Navbar links -->
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse" id="navbar">
       <!-- Log in // Register -->
       <ul class="nav navbar-nav navbar-right">
         <% if (user) { %>
+          <li><a href="/services/new">Add a Service</a></li>
           <li><a href="/signout">Logout</a></li<a>
         <% } else { %>
           <li><a href="/signin">Login</a></li>
