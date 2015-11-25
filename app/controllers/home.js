@@ -8,12 +8,9 @@ module.exports = function (app) {
 
 // INDEX
 router.get('/', function (req, res, next) {
-  res.render('index', {
-    // title: 'Generator-Express MVC'
-  });
+  res.render('index');
 });
 
 router.get('/services', function (req, res, next) {
-  res.render('services/sources.ejs', { message: req.flash('signupMessage') });
+  res.render('services');
 });
-

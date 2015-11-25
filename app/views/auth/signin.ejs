@@ -7,6 +7,9 @@
       </div>
 
       <div class="panel-body" >
+
+        <h4>Please Log In, or <a href="/signup">Register</a></h4>
+
         <form name="form" id="form" class="form-horizontal" method="post" action="/signin">
 
           <div class="input-group">
@@ -21,9 +24,18 @@
 
           <div class="form-group">
             <div class="col-sm-12 controls">
-              <input class="btn btn-primary pull-right login-btn" type="submit">
+              <input class="btn btn-primary pull-right login-btn" type="submit" value="Login">
             </div>
           </div>
+
+          <div class="pull-right">
+
+            <a class="btn btn-social btn-facebook">
+              <span class="fa fa-facebook"></span>
+              Login with Facebook
+            </a>
+          </div>
+
 
           <% if (message.length > 0) { %>
             <div class="alert alert-danger"><%= message %></div>
