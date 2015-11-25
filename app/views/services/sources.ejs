@@ -3,12 +3,11 @@
   <!-- Populate data -->
   <div class="well">
     <div class="media">
-      <a class="pull-left" href="#">
-       <img class="media-object" src="http://placekitten.com/150/150">
-      </a>
       <div class="media-body">
-        <h4 class="media-heading"><i class="fa fa-quote-left"></i>TITLE post.title</h4>
-        <!-- <p class="text-right"> -->
+        <h4 class="media-heading">
+          <i class="fa fa-quote-left"></i>
+          TITLE post.title
+        </h4>
 
         <!-- Button + Price -->
         <ul class="list-inline pull-right">
@@ -16,42 +15,35 @@
           <li>
             <!-- link button to FB messaging -->
             <button disabled="disabled" class="btn btn-info btn-lg">
-              Request Order
+              Contact me
+              <i class="fa fa-facebook-square"></i>
             </button>
           </li>
         </ul>
-        <!-- </p> -->
 
         <!-- Content + Links -->
         <p>DESCRIPTION post.description</p>
         <ul class="list-inline list-unstyled">
           <li><span><i class="glyphicon glyphicon-calendar"></i> Created on: "Date" </span></li>
           <li>|</li>
-          <span><i class="glyphicon glyphicon-comment"></i> by Seller </span>
-          <!-- insert link to message seller -->
+            <i class="fa fa-user"></i> by "createdBy" </span>
           <li>|</li>
           <li>
-            <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
-            <span><i class="fa fa-facebook-square"></i></span>
+            <i class="fa fa-clock-o"></i> post.duration on average</span>
           </li>
           <li>|</li>
-          <li>
-            <span class="glyphicon glyphicon-time">post.duration on average</span>
-          </li>
-          <li>|</li>
-          <!-- if logged in can edit and delete entry -->
+
+          <!-- if logged in show below can edit and delete entry -->
           <li>
             <a href= "#">
-              <i class="ion-close-circled"></i> Delete Entry
+              <i class="fa fa-trash"></i> Delete Entry
             </a>
           </li>
-
           <li>
             <a href="">
               <i class="fa fa-pencil"></i> Edit Post
             </a>
           </li>
-
         </ul>
      </div>
     </div>
