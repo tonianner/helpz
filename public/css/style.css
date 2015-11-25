@@ -17,6 +17,10 @@ a {
   font-family: 'Bowlby One', cursive;
 }
 
+.populate-each {
+  background-color: rgba(252,248,227,1);
+}
+
 /* Header.ejs */
 .jumbotron {
   padding-top: 50px;
