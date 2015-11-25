@@ -44,27 +44,3 @@ router.get('/services/:id/edit', authenticatedUser, function (req, res, next) {
 router.get('/services/:id', function (req, res, next) {
   res.render('services/show');
 });
-
-// Delete
-// router.get('/service/:id/delete', authenticatedUser,function (req, res, next) {
-
-//   var currentUser = req.user.id;
-//   var paramsId = req.params.id
-//   console.log(req.params.id)
-
-//   Service.findById(paramsId, function (err , service){
-//     if (err) res.status(422).json({message: 'Could not delete Service b/c:' + err})
-
-//     if (!service.createdBy) {
-//       res.status(403).json({message: "You are not the creator!"});
-//     } else {
-//       service.remove(function(err){
-//         if (err) {
-//           res.status(422).json({message: 'Could not remove Service b/c:' + err})
-//         } else {
-//           res.status(200).render('services')
-//         }
-//       });
-//     }
-//   })
-// })
