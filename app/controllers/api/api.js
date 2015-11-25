@@ -25,9 +25,12 @@ router.get('/secret', authenticatedUser, function (req, res, next) {
 
 // INDEX
 router.get('/api/helpz', function (req, res){
-  Service.find({}, function (err, services) {
+  Service.find({}).sort({createdOn: -1}).exec(function (err, services) {
     if (err) {
-      res.json({message: 'Could not find any Services b/c: ' + err});
+      res.status(422).json({
+        success: false,
+        message: 'Could not find any Services b/c: ' + err
+      });
     } else {
       res.json(services);
     }
@@ -38,7 +41,10 @@ router.get('/api/helpz', function (req, res){
 router.get('/api/helpz/:id', function (req, res){
   Service.findById(req.params.id, function (err, service){
     if (err) {
-      res.json({message: 'Could not find Service b/c:' + err});
+      res.status(422).json({
+        success: false,
+        message: 'Could not find Service b/c:' + err
+      });
     } else {
       res.send({service: service});
     }
@@ -53,7 +59,10 @@ router.post('/api/helpz', authenticatedUser, function (req, res){
 
   Service.create(req.body.service, function (err, service){
     if (err) {
-      res.status(422).json({message: 'Could not create Service b/c:' + err});
+      res.status(422).json({
+        success: false,
+        message: 'Could not create Service b/c:' + err
+      });
     } else {
       res.send(service);
     }
@@ -63,21 +72,28 @@ router.post('/api/helpz', authenticatedUser, function (req, res){
 //UPDATE
 router.put('/api/helpz/:id', authenticatedUser, function (req, res) {
   var currentUser = req.user.id;
+  var reqService = req.body.service;
 
   Service.findById(req.params.id, function (err, service){
-
-    if(err) res.status(422).json({message: 'Could not find Services b/c:' + err});
+    if(err) {
+      res.status(422).json({
+        message: 'Could not find Services b/c:' + err
+      });
+    }
 
     if (currentUser !=  service.createdBy){
       res.json({message: "You are not the Seller of this post"})
     } else {
-      if(req.body.service.title) service.title = req.body.service.title;
-      if(req.body.service.description) service.description = req.body.service.description;
-      if(req.body.service.duration) service.duration = req.body.service.duration;
+      if (reqService.title)       service.title       = reqService.title;
+      if (reqService.description) service.description = reqService.description;
+      if (reqService.duration)    service.duration    = reqService.duration;
 
       service.save(function(){
-      if (err) res.json({messsage: 'Could not update Service b/c:' + error});
-        res.json({message: "service updated!"});
+        if (err) {
+          res.json({messsage: 'Could not update Service b/c:' + error});
+        } else {
+          res.json({message: "Service updated!"});
+        }
       })
     }
   })
@@ -95,7 +111,7 @@ router.delete('/api/helpz/:id', authenticatedUser,function (req, res, next) {
     } else {
       service.remove(function(err){
       if (err) res.json({message: err})
-      res.json({message: "Serivce has been removed"})
+      res.json({message: "Service has been removed"})
       });
     }
   })
