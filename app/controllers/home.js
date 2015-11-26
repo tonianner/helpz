@@ -30,6 +30,8 @@ router.get('/services', function (req, res, next) {
   res.render('services');
 });
 
+// Sort services
+
 // Create new service
 router.get('/services/new', authenticatedUser, function (req, res, next) {
   res.render('services/new');
