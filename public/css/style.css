@@ -28,6 +28,7 @@ a {
   font-family: 'Bowlby One', cursive;
   color: white;
   font-size: 46px;
+  font-weight: 900;
 }
 
 .vertical-align {
@@ -47,7 +48,8 @@ a {
 
 /* Populating data Serive*/
 .populate-each {
-  background-color: rgba(252,248,227,1);
+  background-color: rgba(252,248,227,0.95);
+  box-shadow: #009688 -3px 3px 0;
 }
 
 /* Header.ejs */
@@ -124,7 +126,6 @@ a {
 .footer {
   bottom: 0;
   width: 100%;
-  height: 60px;
   background-color: #f5f5f5;
   padding-left: 20px;
   padding-right: 20px;
@@ -177,6 +178,10 @@ a {
 }
 .btn-social {
   text-align: center;
+}
+
+#showOne > div > .panel-info {
+  box-shadow: #009688 -3px 3px 0
 }
 
 @media only screen and (max-width: 600px) {
