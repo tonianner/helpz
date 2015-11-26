@@ -42,6 +42,12 @@ module.exports = function(app, config) {
   // PASSPORT SETUP
   require(config.root + "/config/passport.js")(passport);
 
+  // if (user) {...}
+  app.use(function (req, res, next) {
+    global.user = req.user;
+    next()
+  });
+
   // CONTROLLER SETUP
   var controllers = glob.sync(config.root + '/app/controllers/*.js');
   controllers.forEach(function (controller) {
@@ -64,7 +70,7 @@ module.exports = function(app, config) {
   if(app.get('env') === 'development'){
     app.use(function (err, req, res, next) {
       res.status(err.status || 500);
-      res.render('layouts/error', {
+      res.json({
         message: err.message,
         error: err,
         title: 'error'
@@ -74,7 +80,7 @@ module.exports = function(app, config) {
 
   app.use(function (err, req, res, next) {
     res.status(err.status || 500);
-    res.render('layouts/error', {
+    res.json({
       message: err.message,
       error: err,
       title: 'error'

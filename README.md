@@ -1,7 +1,7 @@
 # Project#3 for WDI9 at GA
 
 ## Intro
-Helpz is a place where people who *love* what they do *helpz* you get things done at an unbeatable value. I was inspired by [fiverr.com](https://www.fiverr.com/) for this project, so this is a scalled down replica version and I wanted to focus on the ordering features of updating each order with status.
+Helpz is a place where people who *love* what they do *helpz* you get things done at an unbeatable value. I was inspired by [fiverr.com](https://www.fiverr.com/) for this project, so this is a scalled down replica version. We focused more on using Ajax to get information of the API.
 
 ## Helpz
 
@@ -12,17 +12,20 @@ For this project we used the below:
   - express
   - own api
 
-Libraries used and saved under `package.json`
-
-```bash
-insert libraries here
-```
+### Technologies
+- api
+- node.js
+- mongo
+- express
+- ajax
+- html
+- css & bootstrap
+- javascript 7 jquiry
 
 #### Helpz Basics
 Helpz models are `User` and `Post`.
 
 These are the basic features:
-
 
 - Visitors
   - View landing page
@@ -31,11 +34,6 @@ These are the basic features:
   - Be able to log in/out
 - Logged in User
   - Add a Helpz Post
-    - Text will have limitations per input
   - Edit & update their own post
-  - Hire other Helpz
-    - Update status of order between
-      - Seller(user that created the post)
-      - Buyer(user that is willing to hire for a job)
 
-[Website](http://www.google.com)
+[Website](https://super-helpz.herokuapp.com/)
