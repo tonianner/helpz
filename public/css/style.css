@@ -7,6 +7,33 @@ a {
   color: #00B7FF;
 }
 
+/* Video background Browse*/
+#video-id {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+#video-id video {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Browse Header */
+.headerShow {
+  font-family: 'Bowlby One', cursive;
+  color: white;
+  font-size: 46px;
+}
+
+.vertical-align {
+  margin-top: 5%;
+}
+
 /* Nav-bar content*/
 .icon {
   height: 47px;
@@ -93,15 +120,6 @@ a {
   margin-bottom: 15px;
 }
 
-/* Register */
-.register-btn {
-  box-shadow: #E35803 -3px 3px 0;
-}
-.login-btn {
-  box-shadow: #00BCD4 -3px 3px 0;
-}
-
-
 /* FOOTER items */
 .footer {
   bottom: 0;
@@ -130,6 +148,35 @@ a {
   height: 21px;
   width: auto;
   margin-bottom: 3px;
+}
+
+/* Border of form for registration and sign in*/
+.coupon {
+  border: 3px dashed #337AB7;
+  border-radius: 10px;
+  font-weight: 300;
+}
+.registration .coupon {
+  border: 3px dashed green;
+}
+.coupon #head {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  min-height: 56px;
+}
+.coupon #footer {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+/* Register / Login btns */
+.register-btn {
+  box-shadow: #E35803 -3px 3px 0;
+}
+.login-btn {
+  box-shadow: #00BCD4 -3px 3px 0;
+}
+.btn-social {
+  text-align: center;
 }
 
 @media only screen and (max-width: 600px) {

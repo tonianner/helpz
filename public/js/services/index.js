@@ -10,11 +10,9 @@ $(function(){
                   <i class="fa fa-quote-left"></i> '+ service.title +'\
                 </a>\
               </h4>\
-              <p>'+ service.description +'</p>\
+              <p>I will '+ service.description +'</p>\
               <ul class="list-inline list-unstyled">\
                 <li><span><i class="glyphicon glyphicon-calendar"></i> Created on: '+ service.createdOn +' </span></li>\
-                <li>|</li>\
-                  <i class="fa fa-user"></i> by ' + service.createdBy + ' </span>\
                 <li>|</li>\
                 <li>\
                   <i class="fa fa-clock-o"></i> ' + service.duration + ' on average</span>\

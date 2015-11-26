@@ -1,43 +1,41 @@
 <div class="container">
-  <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 registration">
+      <div class="panel panel-success coupon">
+        <div class="panel-heading">
+          <h3 class="panel-title">Registration</h3>
+        </div>
 
-    <div class="panel panel-success" >
-      <div class="panel-heading">
-          <div class="panel-title text-center">Registration</div>
-      </div>
+        <div class="panel-body">
+          <% if (message.length > 0) { %>
+            <div class="alert alert-danger"><%= message %></div>
+          <% } %>
 
-      <div class="panel-body" >
-        <form name="form" id="form" class="form-horizontal" method="post" action="/signup">
+          <h4>Please Register, or <a href="/signin">Login</a></h4>
 
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="email" type="email" class="form-control" name="email" value="" placeholder="email@domain.com">
-          </div>
+          <form name="form" id="form" class="form-horizontal" method="post" action="/signup">
+            <fieldset>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input id="email" type="email" class="form-control" name="email" value="" placeholder="email@domain.com">
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+              </div>
+              <input class="btn btn-lg btn-success btn-block" type="submit" value="Sign up">
+            </fieldset>
+          </form>
 
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-          </div>
-
-          <div class="form-group">
-            <div class="col-sm-12 controls">
-              <input class="btn btn-success pull-right register-btn" type="submit" value="Sign up">
-            </div>
-          </div>
-        </form>
-
-        <div class="pull-right">
-          <a href="/auth/facebook"class="btn btn-social btn-facebook">
+          <hr/>
+          <center><h4>OR</h4></center>
+          <a href="/auth/facebook"class="btn btn-block btn-lg btn-social btn-facebook text-center">
             <span class="fa fa-facebook"></span>
             Register with Facebook
           </a>
         </div>
 
-        <% if (message.length > 0) { %>
-          <div class="alert alert-danger"><%= message %></div>
-        <% } %>
       </div>
-
     </div>
   </div>
 </div>
