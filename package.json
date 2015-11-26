@@ -7,7 +7,7 @@
     "postinstall": "./node_modules/bower/bin/bower install"
   },
   "dependencies": {
-    "bower": "latest",
+    "bower": "0.6.x",
     "bcrypt": "^0.8.5",
     "body-parser": "^1.13.3",
     "compression": "^1.5.2",
