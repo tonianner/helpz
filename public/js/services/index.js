@@ -9,10 +9,10 @@ $(function(){
             <div class="media-body">\
               <h4 class="media-heading">\
                 <a href="/services/'+ service._id +'">\
-                  <i class="fa fa-quote-left"></i> '+ service.title +'\
+                  <i class="fa fa-quote-left"></i>I will '+ service.title +'\
                 </a>\
               </h4>\
-              <p>I will '+ service.description +'</p>\
+              <p>'+ service.description +'</p>\
               <ul class="list-inline list-unstyled">\
                 <li><span><i class="glyphicon glyphicon-calendar"></i> Created on: '+ formattedDate +' </span></li>\
                 <li>|</li>\
